@@ -73,11 +73,9 @@ or down on the .item class divs,depending on the button element pressed */
 prev.addEventListener('click', function () {
     if (currentItem > 0) {
         pageItems[currentItem].classList.remove('active');
-        carTitle[currentItem].remove(carItems[currentItem].title)
         currentItem--;
         pageItems[currentItem].classList.add('active');
-        carTitle[currentItem].append(carItems[currentItem].title)
-
+        carTitle[currentItem].innerHTML = `${carItems[currentItem].title}`;
     }
 });
 next.addEventListener('click', function () {
@@ -85,6 +83,7 @@ next.addEventListener('click', function () {
         pageItems[currentItem].classList.remove('active');
         currentItem++;
         pageItems[currentItem].classList.add('active');
+        carTitle[currentItem].innerHTML = `${carItems[currentItem].title}`;
 
     }
 });
